@@ -1,0 +1,10 @@
+<launch>
+
+  <arg name="name" default="key_event" description="node name" />
+  <arg name="namespace" default="" description="node namespace" />
+  <arg name="params" default="$(find-pkg-share key_event)/config/params.yml" description="path to parameter file" />
+
+  <node pkg="key_event" exec="key_event" namespace="$(var namespace)" name="$(var name)" output="screen">
+  </node>
+
+</launch>
