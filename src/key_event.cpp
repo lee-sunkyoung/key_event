@@ -4,7 +4,7 @@ namespace key_event {
 
 KeyEvent::KeyEvent() : Node("key_event"), last_key_(""), running_(true) {
   // 퍼블리셔 설정 (String 타입)
-  publisher_ = this->create_publisher<std_msgs::msg::String>("~/key_input", 10);
+  publisher_ = this->create_publisher<std_msgs::msg::String>("/key_event", 10);
 
   // 타이머 설정 (100ms 간격으로 마지막 키 입력값 퍼블리쉬)
   timer_ = this->create_wall_timer(std::chrono::milliseconds(100),
